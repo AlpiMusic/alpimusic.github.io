@@ -322,7 +322,7 @@ footer nav a:hover{color:var(--text)}
       <li><a href="#roportajlar">Röportajlar</a></li>
       <li><a href="#iletisim">İletişim</a></li>
     </ul>
-    <span role="button" tabindex="0" class="listen" data-album="7B0dWp3uZmIn2XyPRm8fk6">Dinle</span>
+    <span role="button" tabindex="0" class="listen" id="hdrPlay" data-album="7B0dWp3uZmIn2XyPRm8fk6">Dinle</span>
   </div>
 </header>
 
@@ -334,8 +334,8 @@ footer nav a:hover{color:var(--text)}
     <h1>Alpi</h1>
     <p class="tag">Duygusal pop ile modern arabesk tınılarını buluşturan, söz ve bestelerini kendisi yazan bağımsız sanatçı.</p>
     <div class="cta">
-      <span role="button" tabindex="0" class="btn primary" data-album="7B0dWp3uZmIn2XyPRm8fk6"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Şimdi dinle</span>
-      <span class="btn" role="button" tabindex="0" data-video="kIYtiOvVXF4" data-vtitle="Alpi - İstanbul">Klibi izle</span>
+      <span role="button" tabindex="0" class="btn primary" id="heroPlay" data-album="7B0dWp3uZmIn2XyPRm8fk6"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Şimdi dinle</span>
+      <span class="btn" id="heroKlip" role="button" tabindex="0" data-video="kIYtiOvVXF4" data-vtitle="Alpi - İstanbul">Klibi izle</span>
     </div>
     <div class="now"><span class="dot"></span><span id="nowTxt">Yeni şarkı <b>Yemin Ederim</b> 31 Ekim'de yayında</span></div>
   </div>
@@ -777,11 +777,12 @@ footer nav a:hover{color:var(--text)}
   Object.keys(REL).forEach(function(k){if(Date.now()>=new Date(REL[k][1]).getTime())AUDIO[k]=REL[k][0]});
   (function(){var N=[['2026-10-31T00:00:00+03:00','Yemin Ederim'],['2026-11-06T00:00:00+03:00','Kırık Saat'],['2026-12-02T00:00:00+03:00','Gözlerin Bir Deniz']],t=Date.now(),cur=null;N.forEach(function(x){if(t>=new Date(x[0]).getTime())cur=x[1]});var e=document.getElementById('nowTxt');if(e&&cur){e.innerHTML='Yeni şarkı <b>'+cur+'</b> yayında'}})();
   var RTS={'yemin-ederim':'2026-10-31T00:00:00+03:00','kirik-saat':'2026-11-06T00:00:00+03:00','gozlerin-bir-deniz':'2026-12-02T00:00:00+03:00'};
-  (function(){var F=[{id:'yemin-ederim',t:'Yemin Ederim',img:'yemin-ederim.jpg',d:'31 Ekim 2026',dd:"31 Ekim 2026'da",from:'2000-01-01T00:00:00+03:00',sp:'https://open.spotify.com/album/28qa4Zbsej8AgjwaIfhWbS',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_mhI98rcIoyG-fp9kIf2jJIygz4k2z2-d0',vid:'Y_68P2mtfM4'},{id:'kirik-saat',t:'Kırık Saat',img:'kirik-saat.jpg',d:'6 Kasım 2026',dd:"6 Kasım 2026'da",from:'2026-11-06T00:00:00+03:00',sp:'https://open.spotify.com/album/5DffAHPts1BNAdwLzts4mJ',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_nxV8QWC3jSm7ic_10InV82A2EqP_18I60',vid:''},{id:'gozlerin-bir-deniz',t:'Gözlerin Bir Deniz',img:'gozlerin-bir-deniz.jpg',d:'2 Aralık 2026',dd:"2 Aralık 2026'da",from:'2026-12-02T00:00:00+03:00',sp:'https://open.spotify.com/album/3YYfk9KJAOmkEfTVQSJ3g2',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_maI1tDvqLYiya4iEvvmVe4jWQH4LSxNrM',vid:''}];
+  (function(){var F=[{id:'yemin-ederim',t:'Yemin Ederim',img:'yemin-ederim.jpg',d:'31 Ekim 2026',dd:"31 Ekim 2026'da",from:'2000-01-01T00:00:00+03:00',sp:'https://open.spotify.com/album/28qa4Zbsej8AgjwaIfhWbS',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_mhI98rcIoyG-fp9kIf2jJIygz4k2z2-d0',vid:'Y_68P2mtfM4'},{id:'kirik-saat',t:'Kırık Saat',img:'kirik-saat.jpg',d:'6 Kasım 2026',dd:"6 Kasım 2026'da",from:'2026-11-06T00:00:00+03:00',sp:'https://open.spotify.com/album/5DffAHPts1BNAdwLzts4mJ',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_nxV8QWC3jSm7ic_10InV82A2EqP_18I60',vid:''},{id:'gozlerin-bir-deniz',t:'Gözlerin Bir Deniz',img:'gozlerin-bir-deniz.jpg',d:'2 Aralık 2026',dd:"2 Aralık 2026'da",from:'2026-11-17T00:00:00+03:00',sp:'https://open.spotify.com/album/3YYfk9KJAOmkEfTVQSJ3g2',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_maI1tDvqLYiya4iEvvmVe4jWQH4LSxNrM',vid:''}];
     var now=Date.now(),S=F[0];F.forEach(function(x){if(now>=new Date(x.from).getTime())S=x});var g=function(i){return document.getElementById(i)};if(!g('yeniTitle'))return;
     var im=g('yeniImg');if(im.getAttribute('src')!==S.img){im.src=S.img}im.alt=S.t+' kapak';g('yeniTitle').textContent=S.t;g('yeniDate').textContent=S.d;g('yeniPlay').setAttribute('data-album',S.id);
     g('yeniTxt').textContent=(now>=new Date(RTS[S.id]).getTime()?'Şimdi tüm dijital platformlarda ve burada.':S.dd+' tüm dijital platformlarda ve burada.');
     g('lnkSp').href=S.sp;g('lnkAm').href=S.am;g('lnkYt').href=S.yt;var k=g('yeniKlip');if(S.vid){k.setAttribute('data-video',S.vid);k.setAttribute('data-vtitle','Alpi - '+S.t);k.style.display=''}else{k.style.display='none'}})();
+  (function(){var H=[['yemin-ederim','Y_68P2mtfM4','Yemin Ederim'],['kirik-saat','','Kırık Saat'],['gozlerin-bir-deniz','','Gözlerin Bir Deniz']],a=null,v=null;H.forEach(function(x){if(AUDIO[x[0]]){a=x;if(x[1])v=x}});if(a){['heroPlay','hdrPlay'].forEach(function(i){var e=document.getElementById(i);if(e)e.setAttribute('data-album',a[0])})}if(v){var k=document.getElementById('heroKlip');if(k){k.setAttribute('data-video',v[1]);k.setAttribute('data-vtitle','Alpi - '+v[2])}}})();
   var cards=[].slice.call(document.querySelectorAll('.rel[data-album]'));
   var list=cards.map(function(c){return {id:c.dataset.album,title:c.querySelector('h4').textContent,art:c.querySelector('img').src,el:c}});
   var au=document.getElementById('plAudio'),player=document.getElementById('player'),cur=-1,seeking=false;
