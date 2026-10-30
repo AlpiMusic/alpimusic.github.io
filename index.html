@@ -101,6 +101,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* Kayan bant */
 .marquee{border-block:1px solid var(--line);overflow:hidden;background:var(--night-2)}
+.plogo{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);transition:transform .15s,background .15s}.plogo:hover{transform:translateY(-2px);background:rgba(255,255,255,.12)}.plogo span{width:24px;height:24px;display:block;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
 .marquee .track{display:flex;gap:48px;width:max-content;padding-block:18px;padding-right:48px;animation:slide 84s linear infinite}
 .marquee span{font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,3.4vw,2.2rem);white-space:nowrap;color:var(--muted)}
 .marquee span.hl{color:var(--text)}
@@ -380,7 +381,9 @@ footer nav a:hover{color:var(--text)}
       </ul>
       <div class="cta">
         <span role="button" tabindex="0" class="btn primary" data-album="yemin-ederim"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Dinle</span>
-        <a class="btn" href="https://music.apple.com/tr/artist/alpi/6776438185" target="_blank" rel="noopener">Apple Music</a>
+        <a class="plogo" href="https://open.spotify.com/album/28qa4Zbsej8AgjwaIfhWbS" target="_blank" rel="noopener" title="Spotify" aria-label="Spotify"><span style="background:#1DB954;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/spotify.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/spotify.svg)"></span></a>
+        <a class="plogo" href="https://music.apple.com/tr/artist/alpi/6776438185" target="_blank" rel="noopener" title="Apple Music" aria-label="Apple Music"><span style="background:#FA2D48;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/applemusic.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/applemusic.svg)"></span></a>
+        <a class="plogo" href="https://www.youtube.com/watch?v=Y_68P2mtfM4" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><span style="background:#FF0000;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/youtube.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/youtube.svg)"></span></a>
         <span class="btn" role="button" tabindex="0" data-video="Y_68P2mtfM4" data-vtitle="Alpi - Yemin Ederim">Klibi izle</span>
       </div>
     </div>
