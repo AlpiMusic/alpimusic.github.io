@@ -350,11 +350,11 @@ footer nav a:hover{color:var(--text)}
 
 <section id="yakinda" class="soonsec">
   <div class="wrap soon-grid">
-    <div class="cover soon-cover"><img src="kirik-saat.jpg" alt="Kırık Saat kapak"></div>
+    <div class="cover soon-cover"><img id="soonImg" src="kirik-saat.jpg" alt="Kırık Saat kapak"></div>
     <div>
       <p class="eyebrow">Yakında · Yeni single</p>
-      <h3 class="soon-title">Kırık Saat</h3>
-      <p class="soon-date">6 Kasım 2026'da tüm dijital platformlarda</p>
+      <h3 class="soon-title" id="soonTitle">Kırık Saat</h3>
+      <p class="soon-date" id="soonDate">6 Kasım 2026'da tüm dijital platformlarda</p>
       <div class="count" id="count" aria-live="polite">
         <div><b id="cD">--</b><span>gün</span></div>
         <div><b id="cH">--</b><span>saat</span></div>
@@ -770,7 +770,7 @@ footer nav a:hover{color:var(--text)}
 
   // Alpi çalar
   var AUDIO={'7B0dWp3uZmIn2XyPRm8fk6':'istanbul.mp3','2aryAaPfkLloJeIPcQH0p6':'mutlu-ol-sevgilim%20(3).mp3','0T1NfJY7qAgfUUIlm4FxrM':'tesadufumsun.mp3','51Blkz3BUe9o6tNRJhJekY':'hosgeldin.mp4','4CqcQk74KwJH9JRYr8svkE':'bana-biraz-sen-lazimsin.mp3','5TRKaTCYc5i4BOztt4TJVm':'tesadufumsun-oriental.mp3','5gFl4BnwKaiKcC3ER1cbaj':'kalbimin-ev-sahibisin.mp3','1eV9ywVCeoJ4hvxS4MgUP9':'yarim-hece.mp3','410nVXwRYaEM9f8U8auIVo':'dagildim-aslinda.mp3','2Ol399QBLlRr5BKFOXwajZ':'belki-yanariz.mp3','3AOkJkJBDmwdDrkBP3vfMj':'sevmeyi-sende-biraktim.mp3','0BsF0L9F7AVCO8IQJ1FrHo':'sevmeyi-sende-biraktim-live.mp3'};
-  var REL={'yemin-ederim':['yemin-ederim.mp3','2026-10-31T00:00:00+03:00','31 Ekim']},RDATE={'kirik-saat':'6 Kasım\'da','gozlerin-bir-deniz':'2 Aralık\'ta','yemin-ederim':'31 Ekim\'de'};
+  var REL={'yemin-ederim':['yemin-ederim.mp3','2026-10-31T00:00:00+03:00'],'gozlerin-bir-deniz':['gozlerin-bir-deniz.mp3','2026-12-02T00:00:00+03:00']},RDATE={'kirik-saat':'6 Kasım\'da','gozlerin-bir-deniz':'2 Aralık\'ta','yemin-ederim':'31 Ekim\'de'};
   Object.keys(REL).forEach(function(k){if(Date.now()>=new Date(REL[k][1]).getTime())AUDIO[k]=REL[k][0]});
   if(AUDIO['yemin-ederim']){var yt=document.getElementById('yeniTxt');if(yt)yt.textContent="Şimdi tüm dijital platformlarda ve burada."}
   var cards=[].slice.call(document.querySelectorAll('.rel[data-album]'));
@@ -845,8 +845,12 @@ footer nav a:hover{color:var(--text)}
         $('fErr').textContent='Mesaj gönderilemedi. Biraz sonra tekrar dene ya da e-postayla yaz.';
       }).then(function(){btn.removeAttribute('aria-busy');btn.textContent='Gönder'});
   });
-  // Kırık Saat geri sayım
-  (function(){var T=new Date('2026-11-06T00:00:00+03:00').getTime();
+  // Yakında geri sayım (Kırık Saat, 17 Kasım'dan itibaren Gözlerin Bir Deniz)
+  (function(){var SOON=[{t:'Kırık Saat',img:'kirik-saat.jpg',d:"6 Kasım 2026'da",T:'2026-11-06T00:00:00+03:00',from:'2000-01-01T00:00:00+03:00'},{t:'Gözlerin Bir Deniz',img:'gozlerin-bir-deniz.jpg',d:"2 Aralık 2026'da",T:'2026-12-02T00:00:00+03:00',from:'2026-11-17T00:00:00+03:00'}];
+    var now=Date.now(),S=SOON[0];SOON.forEach(function(x){if(now>=new Date(x.from).getTime())S=x});
+    var im=$('soonImg');if(im&&im.getAttribute('src')!==S.img){im.src=S.img;im.alt=S.t+' kapak'}
+    $('soonTitle').textContent=S.t;$('soonDate').textContent=S.d+' tüm dijital platformlarda';$('soonOut').textContent=S.t+' şimdi yayında.';
+    var T=new Date(S.T).getTime();
     function pad(n){return ('0'+n).slice(-2)}
     function tick(){var d=T-Date.now();
       if(d<=0){$('count').hidden=true;$('soonOut').hidden=false;return}
