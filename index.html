@@ -369,22 +369,22 @@ footer nav a:hover{color:var(--text)}
 
 <section id="yeni">
   <div class="wrap feature">
-    <div class="cover"><img src="yemin-ederim.jpg" alt="Yemin Ederim kapak"></div>
+    <div class="cover"><img id="yeniImg" src="yemin-ederim.jpg" alt="Yemin Ederim kapak"></div>
     <div>
       <p class="eyebrow">Yeni single</p>
-      <h3>Yemin Ederim</h3>
+      <h3 id="yeniTitle">Yemin Ederim</h3>
       <p id="yeniTxt">31 Ekim 2026'da tüm dijital platformlarda ve burada.</p>
       <ul class="meta">
         <li><small>Yapım</small><strong>℗ 2026 Alpi Records</strong></li>
         <li><small>Söz-Müzik</small><strong>Selahattin Alpı</strong></li>
-        <li><small>Çıkış</small><strong>31 Ekim 2026</strong></li>
+        <li><small>Çıkış</small><strong id="yeniDate">31 Ekim 2026</strong></li>
       </ul>
       <div class="cta">
-        <span role="button" tabindex="0" class="btn primary" data-album="yemin-ederim"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Dinle</span>
-        <a class="plogo" href="https://open.spotify.com/album/28qa4Zbsej8AgjwaIfhWbS" target="_blank" rel="noopener" title="Spotify" aria-label="Spotify"><span style="background:#1DB954;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/spotify.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/spotify.svg)"></span></a>
-        <a class="plogo" href="https://music.apple.com/tr/artist/alpi/6776438185" target="_blank" rel="noopener" title="Apple Music" aria-label="Apple Music"><span style="background:#FA2D48;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/applemusic.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/applemusic.svg)"></span></a>
-        <a class="plogo" href="https://music.youtube.com/playlist?list=OLAK5uy_mhI98rcIoyG-fp9kIf2jJIygz4k2z2-d0" target="_blank" rel="noopener" title="YouTube Music" aria-label="YouTube Music"><span style="background:#FF0000;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/youtubemusic.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/youtubemusic.svg)"></span></a>
-        <span class="btn" role="button" tabindex="0" data-video="Y_68P2mtfM4" data-vtitle="Alpi - Yemin Ederim">Klibi izle</span>
+        <span role="button" tabindex="0" class="btn primary" id="yeniPlay" data-album="yemin-ederim"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Dinle</span>
+        <a class="plogo" href="https://open.spotify.com/album/28qa4Zbsej8AgjwaIfhWbS" target="_blank" rel="noopener" id="lnkSp" title="Spotify" aria-label="Spotify"><span style="background:#1DB954;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/spotify.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/spotify.svg)"></span></a>
+        <a class="plogo" href="https://music.apple.com/tr/artist/alpi/6776438185" target="_blank" rel="noopener" id="lnkAm" title="Apple Music" aria-label="Apple Music"><span style="background:#FA2D48;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/applemusic.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/applemusic.svg)"></span></a>
+        <a class="plogo" href="https://music.youtube.com/playlist?list=OLAK5uy_mhI98rcIoyG-fp9kIf2jJIygz4k2z2-d0" target="_blank" rel="noopener" id="lnkYt" title="YouTube Music" aria-label="YouTube Music"><span style="background:#FF0000;-webkit-mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/youtubemusic.svg);mask-image:url(https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/youtubemusic.svg)"></span></a>
+        <span class="btn" id="yeniKlip" role="button" tabindex="0" data-video="Y_68P2mtfM4" data-vtitle="Alpi - Yemin Ederim">Klibi izle</span>
       </div>
     </div>
   </div>
@@ -776,7 +776,12 @@ footer nav a:hover{color:var(--text)}
   var REL={'yemin-ederim':['yemin-ederim.mp3','2026-10-31T00:00:00+03:00'],'gozlerin-bir-deniz':['gozlerin-bir-deniz.mp3','2026-12-02T00:00:00+03:00']},RDATE={'kirik-saat':'6 Kasım\'da','gozlerin-bir-deniz':'2 Aralık\'ta','yemin-ederim':'31 Ekim\'de'};
   Object.keys(REL).forEach(function(k){if(Date.now()>=new Date(REL[k][1]).getTime())AUDIO[k]=REL[k][0]});
   (function(){var N=[['2026-10-31T00:00:00+03:00','Yemin Ederim'],['2026-11-06T00:00:00+03:00','Kırık Saat'],['2026-12-02T00:00:00+03:00','Gözlerin Bir Deniz']],t=Date.now(),cur=null;N.forEach(function(x){if(t>=new Date(x[0]).getTime())cur=x[1]});var e=document.getElementById('nowTxt');if(e&&cur){e.innerHTML='Yeni şarkı <b>'+cur+'</b> yayında'}})();
-  if(AUDIO['yemin-ederim']){var yt=document.getElementById('yeniTxt');if(yt)yt.textContent="Şimdi tüm dijital platformlarda ve burada."}
+  var RTS={'yemin-ederim':'2026-10-31T00:00:00+03:00','kirik-saat':'2026-11-06T00:00:00+03:00','gozlerin-bir-deniz':'2026-12-02T00:00:00+03:00'};
+  (function(){var F=[{id:'yemin-ederim',t:'Yemin Ederim',img:'yemin-ederim.jpg',d:'31 Ekim 2026',dd:"31 Ekim 2026'da",from:'2000-01-01T00:00:00+03:00',sp:'https://open.spotify.com/album/28qa4Zbsej8AgjwaIfhWbS',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_mhI98rcIoyG-fp9kIf2jJIygz4k2z2-d0',vid:'Y_68P2mtfM4'},{id:'kirik-saat',t:'Kırık Saat',img:'kirik-saat.jpg',d:'6 Kasım 2026',dd:"6 Kasım 2026'da",from:'2026-11-06T00:00:00+03:00',sp:'https://open.spotify.com/album/5DffAHPts1BNAdwLzts4mJ',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_nxV8QWC3jSm7ic_10InV82A2EqP_18I60',vid:''},{id:'gozlerin-bir-deniz',t:'Gözlerin Bir Deniz',img:'gozlerin-bir-deniz.jpg',d:'2 Aralık 2026',dd:"2 Aralık 2026'da",from:'2026-12-02T00:00:00+03:00',sp:'https://open.spotify.com/album/3YYfk9KJAOmkEfTVQSJ3g2',am:'https://music.apple.com/tr/artist/alpi/6776438185',yt:'https://music.youtube.com/playlist?list=OLAK5uy_maI1tDvqLYiya4iEvvmVe4jWQH4LSxNrM',vid:''}];
+    var now=Date.now(),S=F[0];F.forEach(function(x){if(now>=new Date(x.from).getTime())S=x});var g=function(i){return document.getElementById(i)};if(!g('yeniTitle'))return;
+    var im=g('yeniImg');if(im.getAttribute('src')!==S.img){im.src=S.img}im.alt=S.t+' kapak';g('yeniTitle').textContent=S.t;g('yeniDate').textContent=S.d;g('yeniPlay').setAttribute('data-album',S.id);
+    g('yeniTxt').textContent=(now>=new Date(RTS[S.id]).getTime()?'Şimdi tüm dijital platformlarda ve burada.':S.dd+' tüm dijital platformlarda ve burada.');
+    g('lnkSp').href=S.sp;g('lnkAm').href=S.am;g('lnkYt').href=S.yt;var k=g('yeniKlip');if(S.vid){k.setAttribute('data-video',S.vid);k.setAttribute('data-vtitle','Alpi - '+S.t);k.style.display=''}else{k.style.display='none'}})();
   var cards=[].slice.call(document.querySelectorAll('.rel[data-album]'));
   var list=cards.map(function(c){return {id:c.dataset.album,title:c.querySelector('h4').textContent,art:c.querySelector('img').src,el:c}});
   var au=document.getElementById('plAudio'),player=document.getElementById('player'),cur=-1,seeking=false;
@@ -787,7 +792,7 @@ footer nav a:hover{color:var(--text)}
     $('icPlay').style.display=au.paused?'':'none';$('icPause').style.display=au.paused?'none':''}
   function load(i,autoplay){
     var t=list[i];if(!t)return;
-    if(!AUDIO[t.id]){toast('“'+t.title+'” '+(RDATE[t.id]?RDATE[t.id]+' yayında':'yakında sitede dinlenebilecek'));return}
+    if(!AUDIO[t.id]){toast('“'+t.title+'” '+((RDATE[t.id]&&RTS[t.id]&&Date.now()<new Date(RTS[t.id]).getTime())?RDATE[t.id]+' yayında':'yakında sitede dinlenebilecek'));return}
     cur=i;au.src=AUDIO[t.id];$('plArt').src=t.art;$('plArt').alt=t.title+' kapak';$('plTitle').textContent=t.title;
     player.classList.add('open');document.body.classList.add('playing');
     if(autoplay){var p=au.play();if(p&&p.catch)p.catch(function(){mark()})}
